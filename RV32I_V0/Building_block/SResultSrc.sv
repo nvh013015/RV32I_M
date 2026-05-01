@@ -1,4 +1,4 @@
-module SRdata (
+module SResultSrc (
     input logic clock,
     input logic [1:0]resultSrc,
     input logic [31:0] ALUresult,

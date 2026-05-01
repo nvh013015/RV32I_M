@@ -2,7 +2,9 @@ module ALU (
     input logic[3:0] ALUControl,
     input logic[31:0] A,
     input logic[31:0] B,
-    output logic[31:0] ALUResult
+    output logic[31:0] ALUResult,
+    output logic Zero
+
 );
     always_comb begin : blockName
         case (ALUControl)
@@ -24,5 +26,7 @@ module ALU (
             default: ALUResult = 32'b0;   
         endcase
     end
+
+    assign Zero = (ALUResult == 32'b0);
 
 endmodule
