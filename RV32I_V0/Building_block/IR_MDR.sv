@@ -1,4 +1,4 @@
-module IntermediateRegisters(
+module IR_MDR (
     input logic reset,
     input logic clock,
     //IR

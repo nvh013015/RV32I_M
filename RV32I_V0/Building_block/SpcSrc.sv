@@ -4,9 +4,9 @@ module SpcSrc (
     input logic [31:0] newPC,
     input logic [31:0]Result,
     input logic Select,
+    output logic [31:0] PC,
     output logic [31:0] MemAddr
 );
-    logic [31:0] PC;
     always_ff @( posedge clk ) begin 
         if (PCWrite) begin
             PC <= newPC;
