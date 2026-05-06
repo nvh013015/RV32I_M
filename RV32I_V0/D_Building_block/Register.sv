@@ -4,7 +4,7 @@ module Register (
     input logic [4:0] rs2_addr,
     input logic [4:0] rd_addr,
     input logic [31:0] writeData,
-    input logic regWrite,
+    input logic RegWrite,
     output logic [31:0] rs1_data,
     output logic [31:0] rs2_data
 );
@@ -15,7 +15,7 @@ module Register (
     end
     
     always_ff @( posedge clock ) begin
-        if (regWrite && (rd_addr != 5'b0)) begin
+        if (RegWrite && (rd_addr != 5'b0)) begin
             regFile[rd_addr] <= writeData;
         end
     end

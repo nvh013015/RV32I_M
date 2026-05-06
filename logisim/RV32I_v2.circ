@@ -2594,6 +2594,10 @@
       <a name="value" val="0x0"/>
       <a name="width" val="3"/>
     </comp>
+    <comp lib="0" loc="(1500,1440)" name="Tunnel">
+      <a name="label" val="Op"/>
+      <a name="width" val="7"/>
+    </comp>
     <comp lib="0" loc="(1540,1170)" name="Tunnel">
       <a name="label" val="aluC"/>
       <a name="width" val="3"/>
@@ -2630,6 +2634,10 @@
     </comp>
     <comp lib="0" loc="(1550,810)" name="Tunnel">
       <a name="label" val="ALUOp"/>
+      <a name="width" val="2"/>
+    </comp>
+    <comp lib="0" loc="(1740,1610)" name="Tunnel">
+      <a name="label" val="immS"/>
       <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(1820,830)" name="Splitter">
@@ -2965,6 +2973,8 @@
     <wire from="(1410,810)" to="(1410,1150)"/>
     <wire from="(1410,810)" to="(1550,810)"/>
     <wire from="(1430,1170)" to="(1540,1170)"/>
+    <wire from="(1430,1440)" to="(1430,1560)"/>
+    <wire from="(1430,1440)" to="(1500,1440)"/>
     <wire from="(1430,440)" to="(1430,590)"/>
     <wire from="(1430,440)" to="(1550,440)"/>
     <wire from="(1430,620)" to="(1430,720)"/>

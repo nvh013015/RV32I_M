@@ -30,22 +30,22 @@ module Datapath (
     logic [31:0] rd1;
     logic [31:0] rd2;
 
-    RegisterFile regFile (
+    Register regFile (
         .clock(clock),
         .RegWrite(RegWrite),
-        .rs1(Instruction[19:15]), // Assuming rs1 is in bits [19:15]
-        .rs2(Instruction[24:20]), // Assuming rs2 is in bits [24:20]
-        .rd(Instruction[11:7]),   // Assuming rd is in bits [11:7]
+        .rs1_addr(Instruction[19:15]), // Assuming rs1 is in bits [19:15]
+        .rs2_addr(Instruction[24:20]), // Assuming rs2 is in bits [24:20]
+        .rd_addr(Instruction[11:7]),   // Assuming rd is in bits [11:7]
         .writeData(Result),       // Connect to Result for writing back
-        .readData1(rd1),     // Connect to ALU source A
-        .readData2(rd2)      // Connect to ALU source B
+        .rs1_data(rd1),     // Connect to ALU source A
+        .rs2_data(rd2)      // Connect to ALU source B
     );
 
     logic [31:0] imm;
     Extender extender (
-        .instruction(Instruction),
-        .ImmSrc(ImmSrc),
-        .imm(imm)
+        .ExtOp(ImmSrc),
+        .imm(Instruction),
+        .extImm(imm)
     );
 
     IR_MDR ir_mdr (
