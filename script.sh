@@ -1,0 +1,1 @@
+verilator -Wall --cc ALU.sv --exe sim_main.cpp --trace

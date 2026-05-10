@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module ALU (
     input logic[3:0] ALUControl,
     input logic[31:0] A,

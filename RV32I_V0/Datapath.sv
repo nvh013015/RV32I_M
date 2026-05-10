@@ -79,7 +79,7 @@ module Datapath (
         .imm(imm), // Assuming imm is the extended immediate value
         .SdataSrcA(SdataSrc[3:2]),
         .SdataSrcB(SdataSrc[1:0]),
-        .writeData(), // Connect to register file write data
+        .writeData(MemWriteData), // Connect to register file write data
         .ALUsrcA(ALUSrcA), // Connect to ALU source A
         .ALUsrcB(ALUSrcB)  // Connect to ALU source B
 
