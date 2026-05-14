@@ -19,6 +19,7 @@ module Datapath (
     //Memory Interface
     output logic [31:0] MemAddr,
     output logic [31:0] MemWriteData,
+    output logic [3:0] MemWriteMask,
     input logic [31:0] MemReadData
 );
 
@@ -31,6 +32,7 @@ module Datapath (
     logic [31:0] rd2;
 
     Register regFile (
+        .reset(reset),
         .clock(clock),
         .RegWrite(RegWrite),
         .rs1_addr(Instruction[19:15]), // Assuming rs1 is in bits [19:15]
@@ -48,19 +50,35 @@ module Datapath (
         .extImm(imm)
     );
 
-    IR_MDR ir_mdr (
+    IR ir (
         .reset(reset),
         .clock(clock),
         .IRWrite(IRWrite),
         .instruction(MemReadData), // Assuming instruction is read from memory
         .PC(PC), // Assuming PC is available
         .oldPC(oldPC), // Connect to appropriate signal if needed
-        .o_instruction(Instruction),
-        .Data(MemReadData), // Assuming data is read from memory
-        .o_Data(mdr_data) // Connect to appropriate signal if needed
+        .o_instruction(Instruction)
+    );
+
+    MDR mdr (
+        .reset(reset),
+        .clock(clock),
+        .Which_load_comment(Instruction[14:12]), // Assuming funct3 is in bits [14:12]
+        .What_HW_or_B(Instruction[1:0]), // Assuming the least significant 2 bits of funct3 determine the half-word or byte selection
+        .Data(MemReadData), // Connect to memory read data
+        .o_Data(mdr_data) // Connect to appropriate signal for use in SResultSrc
+    );
+
+    Store store (
+        .writeData(rd2), // Connect to rs2 data from register file
+        .WhichStore(Instruction[14:12]), // Assuming funct3 is in bits [14:12]
+        .which_half_or_byte(Instruction[1:0]), // Assuming the least significant 2 bits of funct3 determine the half-word or byte selection
+        .storeData(MemWriteData), // Connect to memory write data
+        .storeMask(MemWriteMask) // Connect to appropriate signal if needed for memory write mask
     );
 
     SpcSrc spcSrc (
+        .reset(reset),
         .clk(clock),
         .PCWrite(PCWrite),
         .newPC(Result), // Assuming newPC is the ALU result for simplicity
@@ -71,6 +89,7 @@ module Datapath (
     );
 
     SdataSrc sdataSrc (
+        .reset(reset),
         .clock(clock),
         .newPC(PC), // Assuming newPC is the ALU result for simplicity
         .oldPC(oldPC), // Assuming oldPC is the same as PC for simplicity
@@ -79,7 +98,6 @@ module Datapath (
         .imm(imm), // Assuming imm is the extended immediate value
         .SdataSrcA(SdataSrc[3:2]),
         .SdataSrcB(SdataSrc[1:0]),
-        .writeData(MemWriteData), // Connect to register file write data
         .ALUsrcA(ALUSrcA), // Connect to ALU source A
         .ALUsrcB(ALUSrcB)  // Connect to ALU source B
 
@@ -97,6 +115,7 @@ module Datapath (
     );
 
     SResultSrc sResultSrc (
+        .reset(reset),
         .clock(clock),
         .resultSrc(ResultSrc),
         .ALUresult(ALUResult),

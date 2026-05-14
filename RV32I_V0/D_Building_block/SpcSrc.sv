@@ -1,5 +1,6 @@
 module SpcSrc (
     input logic clk,
+    input logic reset,
     input logic PCWrite,
     input logic [31:0] newPC,
     input logic [31:0]Result,
@@ -8,7 +9,9 @@ module SpcSrc (
     output logic [31:0] MemAddr
 );
     always_ff @( posedge clk ) begin 
-        if (PCWrite) begin
+        if (reset) begin
+            PC <= 32'b0;
+        end else if (PCWrite) begin
             PC <= newPC;
         end
     end

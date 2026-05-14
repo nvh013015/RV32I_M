@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1778518616" />
+    <testcase name="alu_combo_test" classname="DBb_testbench" file="/home/nvh-0502/Documents/Git/RV32I_M/Testbench/DBb_test/DBb_testbench.py" lineno="5" time="0.0007727146148681641" sim_time_ns="12.0" ratio_time="15529.666152422093" />
+  </testsuite>
+</testsuites>

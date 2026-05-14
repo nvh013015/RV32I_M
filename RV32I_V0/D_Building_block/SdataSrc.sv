@@ -1,5 +1,6 @@
 module SdataSrc (
     input logic clock,
+    input logic reset,
     input logic [31:0] newPC,
     input logic [31:0] oldPC,
     input logic [31:0] rs1,
@@ -7,14 +8,19 @@ module SdataSrc (
     input logic [31:0] imm,
     input logic [1:0] SdataSrcA,
     input logic [1:0] SdataSrcB,
-    output logic [31:0] writeData,
     output logic [31:0] ALUsrcA,
     output logic [31:0] ALUsrcB
 );
     logic[31:0] Data1;
+    logic [31:0] writeData;
     always_ff @( posedge clock ) begin 
-        Data1 <= rs1;
-        writeData <= rs2;
+        if (reset) begin
+            Data1 <= 32'b0;
+            writeData <= 32'b0;
+        end else begin
+            Data1 <= rs1;
+            writeData <= rs2;
+        end
     end
 
     always_comb begin

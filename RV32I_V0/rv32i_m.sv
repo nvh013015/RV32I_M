@@ -4,7 +4,8 @@ module rv32i_m (
     output logic memWrite,
     input logic [31:0] mem_rdata,
     output logic [31:0] mem_addr,
-    output logic [31:0] mem_wdata
+    output logic [31:0] mem_wdata,
+    output logic [3:0] mem_wmask
 );
 
     logic zero;
@@ -21,6 +22,7 @@ module rv32i_m (
 
 
 Controller controller (
+    .reset(reset),
     .clk(clk),
     .zero(zero),
     .instruction(instruction),
@@ -53,8 +55,8 @@ Datapath datapath (
     .Zero(zero),
     .MemAddr(mem_addr),
     .MemWriteData(mem_wdata),
-    .MemReadData(mem_rdata)
-
+    .MemReadData(mem_rdata),
+    .MemWriteMask(mem_wmask)
 );
 
 endmodule

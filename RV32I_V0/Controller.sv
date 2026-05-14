@@ -1,4 +1,5 @@
 module Controller ( 
+    input logic reset,
     input logic clk,
     input logic zero,
     input logic [31:0] instruction,
@@ -17,6 +18,7 @@ module Controller (
     logic branch;
 
     fsm fsm_inst (
+        .reset(reset),
         .PCWrite(PCwrite),
         .MemWrite(MemWrite),
         .IRWrite(IRwrite),
@@ -25,13 +27,11 @@ module Controller (
         .ResultSrc(ResultSrc),
         .ALUSrcA(ALUSrcA),
         .ALUSrcB(ALUSrcB),
-        .ImmSrc(ImmSrc),
         .ALUCop(ALUop),
         .branch(branch),
         .clock(clk),
         .zero(zero),
-        .instruction(instruction),
-        .op(instruction[6:0])
+        .instruction(instruction)
     );
 
     aluC_G aluC_Generator (

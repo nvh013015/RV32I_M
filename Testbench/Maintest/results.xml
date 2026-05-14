@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1778516176" />
+    <testcase name="rv32i_basic_test" classname="maintest" file="/home/nvh-0502/Documents/Git/RV32I_M/Testbench/maintest.py" lineno="33" time="0.010499954223632812" sim_time_ns="2021.0" ratio_time="192477.02960944595" />
+  </testsuite>
+</testsuites>

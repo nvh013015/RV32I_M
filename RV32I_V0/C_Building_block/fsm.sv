@@ -7,13 +7,12 @@ module fsm(
     output logic [1:0] ResultSrc,
     output logic [1:0] ALUSrcA,
     output logic [1:0] ALUSrcB,
-    output logic [2:0] ImmSrc,
     output logic [1:0] ALUCop,
     output logic branch,
     input logic clock,
+    input logic reset,
     input logic zero,
-    input logic [31:0] instruction,
-    input logic [6:0] op
+    input logic [31:0] instruction
 
 );
     // State Encoding: 4-bit (0000 to 1010)
@@ -33,7 +32,11 @@ module fsm(
     logic [3:0] state, next_state;
 
     always_ff @( posedge clock ) begin 
-        state <= next_state;
+        if (reset) begin
+            state <= FETCH;
+        end else begin
+            state <= next_state;
+        end
     end
 
     always_comb begin
@@ -46,7 +49,6 @@ module fsm(
         ResultSrc = 2'b00;
         ALUSrcA = 2'b00;
         ALUSrcB = 2'b00;
-        ImmSrc = 3'b000;
         ALUCop = 2'b00;
 
         case (state)
@@ -68,7 +70,7 @@ module fsm(
                 ALUSrcA = 2'b01; // Use rs1 as ALU source A
                 ALUSrcB = 2'b01; // Use rs2 as ALU source
                 ALUCop = 2'b00; // ALU performs addition (for address calculation)
-                case(op)
+                case(instruction[6:0])
                     7'b0000011, 7'b0100011: next_state = MEM_ADR; // Load/Store instructions
                     7'b0110011: next_state = EXECUTE_R; // R-type instructions
                     7'b0010011: next_state = EXECUTE_I; // I-type instructions
@@ -83,7 +85,7 @@ module fsm(
                 ALUSrcA = 2'b10; // Use rs1 as ALU source A
                 ALUSrcB = 2'b01; // Use rs2 as ALU source
                 ALUCop = 2'b00; // ALU performs addition (for address calculation
-                case(op)
+                case(instruction[6:0])
                     7'b0000011: next_state = MEM_READ; // Load instruction
                     7'b0100011: next_state = MEM_WRITE; // Store instruction
                     default: next_state = FETCH; // Default case (should not happen)

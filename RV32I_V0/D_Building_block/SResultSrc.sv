@@ -1,5 +1,6 @@
 module SResultSrc (
     input logic clock,
+    input logic reset,
     input logic [1:0]resultSrc,
     input logic [31:0] ALUresult,
     input logic [31:0] MemData,
@@ -7,7 +8,11 @@ module SResultSrc (
 );
     logic [31:0] ALUout;
     always_ff @( posedge clock ) begin 
-        ALUout <= ALUresult;
+        if (reset) begin
+            ALUout <= 32'b0;
+        end else begin
+            ALUout <= ALUresult;
+        end
     end
     always_comb begin 
         case (resultSrc)
