@@ -2,16 +2,18 @@
 SIM ?= verilator
 TOPLEVEL_LANG ?= verilog
 
-RTL_DIR = $(PWD)/../RV32I_V0
+RTL_DIR = $(PWD)/../../RV32I_V0
 
 # Liệt kê file nguồn
-VERILOG_SOURCES += $(RTL_DIR)/rv32i_m.sv
+VERILOG_SOURCES += $(RTL_DIR)/Top.sv
 VERILOG_SOURCES += $(RTL_DIR)/Datapath.sv
 VERILOG_SOURCES += $(RTL_DIR)/Controller.sv
+VERILOG_SOURCES += $(RTL_DIR)/Memory.sv
+VERILOG_SOURCES += $(RTL_DIR)/rv32i_m.sv
 VERILOG_SOURCES += $(wildcard $(RTL_DIR)/C_Building_block/*.sv)
 VERILOG_SOURCES += $(wildcard $(RTL_DIR)/D_Building_block/*.sv)
 
-TOPLEVEL = rv32i_m
+TOPLEVEL = Top
 MODULE = maintest
 
 # --- CẤU HÌNH RIÊNG CHO VERILATOR ---

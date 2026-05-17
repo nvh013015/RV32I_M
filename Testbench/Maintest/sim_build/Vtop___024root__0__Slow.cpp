@@ -4,35 +4,27 @@
 
 #include "Vtop__pch.h"
 
-VL_ATTR_COLD void Vtop___024root___eval_static__TOP(Vtop___024root* vlSelf);
-
 VL_ATTR_COLD void Vtop___024root___eval_static(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_static\n"); );
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    Vtop___024root___eval_static__TOP(vlSelf);
-    vlSelfRef.__Vtrigprevexpr___TOP__rv32i_m__DOT__controller__DOT__fsm_inst__DOT__clock__0 
-        = vlSelfRef.rv32i_m__DOT__controller__DOT__fsm_inst__DOT__clock;
-    vlSelfRef.__Vtrigprevexpr___TOP__rv32i_m__DOT__datapath__DOT__regFile__DOT__clock__0 
-        = vlSelfRef.rv32i_m__DOT__datapath__DOT__regFile__DOT__clock;
-    vlSelfRef.__Vtrigprevexpr___TOP__rv32i_m__DOT__datapath__DOT__ir_mdr__DOT__clock__0 
-        = vlSelfRef.rv32i_m__DOT__datapath__DOT__ir_mdr__DOT__clock;
-    vlSelfRef.__Vtrigprevexpr___TOP__rv32i_m__DOT__datapath__DOT__spcSrc__DOT__clk__0 
-        = vlSelfRef.rv32i_m__DOT__datapath__DOT__spcSrc__DOT__clk;
-    vlSelfRef.__Vtrigprevexpr___TOP__rv32i_m__DOT__datapath__DOT__sdataSrc__DOT__clock__0 
-        = vlSelfRef.rv32i_m__DOT__datapath__DOT__sdataSrc__DOT__clock;
-    vlSelfRef.__Vtrigprevexpr___TOP__rv32i_m__DOT__datapath__DOT__sResultSrc__DOT__clock__0 
-        = vlSelfRef.rv32i_m__DOT__datapath__DOT__sResultSrc__DOT__clock;
-}
-
-VL_ATTR_COLD void Vtop___024root___eval_static__TOP(Vtop___024root* vlSelf) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_static__TOP\n"); );
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Body
-    vlSelfRef.rv32i_m__DOT__SdataSrc = (((IData)(vlSelfRef.rv32i_m__DOT__ALUSrcA) 
-                                         << 2U) | (IData)(vlSelfRef.rv32i_m__DOT__ALUSrcB));
+    vlSelfRef.__Vtrigprevexpr___TOP__Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__clock__0 
+        = vlSelfRef.Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__clock;
+    vlSelfRef.__Vtrigprevexpr___TOP__Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__clock__0 
+        = vlSelfRef.Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__clock;
+    vlSelfRef.__Vtrigprevexpr___TOP__Top__DOT__cpu__DOT__datapath__DOT__ir__DOT__clock__0 
+        = vlSelfRef.Top__DOT__cpu__DOT__datapath__DOT__ir__DOT__clock;
+    vlSelfRef.__Vtrigprevexpr___TOP__Top__DOT__cpu__DOT__datapath__DOT__mdr__DOT__clock__0 
+        = vlSelfRef.Top__DOT__cpu__DOT__datapath__DOT__mdr__DOT__clock;
+    vlSelfRef.__Vtrigprevexpr___TOP__Top__DOT__cpu__DOT__datapath__DOT__spcSrc__DOT__clk__0 
+        = vlSelfRef.Top__DOT__cpu__DOT__datapath__DOT__spcSrc__DOT__clk;
+    vlSelfRef.__Vtrigprevexpr___TOP__Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__clock__0 
+        = vlSelfRef.Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__clock;
+    vlSelfRef.__Vtrigprevexpr___TOP__Top__DOT__cpu__DOT__datapath__DOT__sResultSrc__DOT__clock__0 
+        = vlSelfRef.Top__DOT__cpu__DOT__datapath__DOT__sResultSrc__DOT__clock;
+    vlSelfRef.__Vtrigprevexpr___TOP__Top__DOT__memory__DOT__clk__0 
+        = vlSelfRef.Top__DOT__memory__DOT__clk;
 }
 
 VL_ATTR_COLD void Vtop___024root___eval_initial__TOP(Vtop___024root* vlSelf);
@@ -50,13 +42,15 @@ VL_ATTR_COLD void Vtop___024root___eval_initial__TOP(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    vlSelfRef.rv32i_m__DOT__datapath__DOT__regFile__DOT__unnamedblk1__DOT__i = 0U;
-    while (VL_GTS_III(32, 0x00000020U, vlSelfRef.rv32i_m__DOT__datapath__DOT__regFile__DOT__unnamedblk1__DOT__i)) {
-        vlSelfRef.rv32i_m__DOT__datapath__DOT__regFile__DOT__regFile[(0x0000001fU 
-                                                                      & vlSelfRef.rv32i_m__DOT__datapath__DOT__regFile__DOT__unnamedblk1__DOT__i)] = 0U;
-        vlSelfRef.rv32i_m__DOT__datapath__DOT__regFile__DOT__unnamedblk1__DOT__i 
-            = ((IData)(1U) + vlSelfRef.rv32i_m__DOT__datapath__DOT__regFile__DOT__unnamedblk1__DOT__i);
+    vlSelfRef.Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__unnamedblk1__DOT__i = 0U;
+    while (VL_GTS_III(32, 0x00000020U, vlSelfRef.Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__unnamedblk1__DOT__i)) {
+        vlSelfRef.Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__regFile[(0x0000001fU 
+                                                                            & vlSelfRef.Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__unnamedblk1__DOT__i)] = 0U;
+        vlSelfRef.Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__unnamedblk1__DOT__i 
+            = ((IData)(1U) + vlSelfRef.Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__unnamedblk1__DOT__i);
     }
+    VL_READMEM_N(true, 32, 1024, 0, "program.hex"s,  &(vlSelfRef.Top__DOT__memory__DOT__ram)
+                 , 0, ~0ULL);
 }
 
 VL_ATTR_COLD void Vtop___024root___eval_final(Vtop___024root* vlSelf) {
@@ -84,7 +78,7 @@ VL_ATTR_COLD void Vtop___024root___eval_settle(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
             Vtop___024root___dump_triggers__stl(vlSelfRef.__VstlTriggered, "stl"s);
 #endif
-            VL_FATAL_MT("/home/nvh-0502/Documents/Git/RV32I_M/Testbench/../RV32I_V0/rv32i_m.sv", 1, "", "DIDNOTCONVERGE: Settle region did not converge after '--converge-limit' of 10000 tries");
+            VL_FATAL_MT("/home/nvh-0502/Documents/Git/RV32I_M/Testbench/Maintest/../../RV32I_V0/Top.sv", 1, "", "DIDNOTCONVERGE: Settle region did not converge after '--converge-limit' of 10000 tries");
         }
         __VstlIterCount = ((IData)(1U) + __VstlIterCount);
         vlSelfRef.__VstlPhaseResult = Vtop___024root___eval_phase__stl(vlSelf);
@@ -189,22 +183,28 @@ VL_ATTR_COLD void Vtop___024root___dump_triggers__act(const VlUnpacked<QData/*63
         VL_DBG_MSGS("         No '" + tag + "' region triggers active\n");
     }
     if ((1U & (IData)(triggers[0U]))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 0 is active: @(posedge rv32i_m.controller.fsm_inst.clock)\n");
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 0 is active: @(posedge Top.cpu.controller.fsm_inst.clock)\n");
     }
     if ((1U & (IData)((triggers[0U] >> 1U)))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 1 is active: @(posedge rv32i_m.datapath.regFile.clock)\n");
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 1 is active: @(posedge Top.cpu.datapath.regFile.clock)\n");
     }
     if ((1U & (IData)((triggers[0U] >> 2U)))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 2 is active: @(posedge rv32i_m.datapath.ir_mdr.clock)\n");
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 2 is active: @(posedge Top.cpu.datapath.ir.clock)\n");
     }
     if ((1U & (IData)((triggers[0U] >> 3U)))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 3 is active: @(posedge rv32i_m.datapath.spcSrc.clk)\n");
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 3 is active: @(posedge Top.cpu.datapath.mdr.clock)\n");
     }
     if ((1U & (IData)((triggers[0U] >> 4U)))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 4 is active: @(posedge rv32i_m.datapath.sdataSrc.clock)\n");
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 4 is active: @(posedge Top.cpu.datapath.spcSrc.clk)\n");
     }
     if ((1U & (IData)((triggers[0U] >> 5U)))) {
-        VL_DBG_MSGS("         '" + tag + "' region trigger index 5 is active: @(posedge rv32i_m.datapath.sResultSrc.clock)\n");
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 5 is active: @(posedge Top.cpu.datapath.sdataSrc.clock)\n");
+    }
+    if ((1U & (IData)((triggers[0U] >> 6U)))) {
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 6 is active: @(posedge Top.cpu.datapath.sResultSrc.clock)\n");
+    }
+    if ((1U & (IData)((triggers[0U] >> 7U)))) {
+        VL_DBG_MSGS("         '" + tag + "' region trigger index 7 is active: @(posedge Top.memory.clk)\n");
     }
 }
 #endif  // VL_DEBUG
@@ -217,143 +217,174 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     const uint64_t __VscopeHash = VL_MURMUR64_HASH(vlSelf->vlNamep);
     vlSelf->clk = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 16707436170211756652ull);
     vlSelf->reset = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 9928399931838511862ull);
-    vlSelf->memWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 5585208383081179762ull);
-    vlSelf->mem_rdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 9659133473039683418ull);
-    vlSelf->mem_addr = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 326597072690670135ull);
-    vlSelf->mem_wdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 5431754401481461448ull);
-    vlSelf->rv32i_m__DOT__clk = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 7460314397410195677ull);
-    vlSelf->rv32i_m__DOT__reset = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 369177836878102938ull);
-    vlSelf->rv32i_m__DOT__memWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 14739126720823959288ull);
-    vlSelf->rv32i_m__DOT__mem_rdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 12497846194249140127ull);
-    vlSelf->rv32i_m__DOT__mem_addr = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 13441933422822854525ull);
-    vlSelf->rv32i_m__DOT__mem_wdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 5973379248636602932ull);
-    vlSelf->rv32i_m__DOT__zero = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 11740978564074417357ull);
-    vlSelf->rv32i_m__DOT__instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 8881939985143127155ull);
-    vlSelf->rv32i_m__DOT__PCwrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 5460984429292834252ull);
-    vlSelf->rv32i_m__DOT__IRwrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 616143546756984135ull);
-    vlSelf->rv32i_m__DOT__RegWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 8883376573117927755ull);
-    vlSelf->rv32i_m__DOT__AdrSrc = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 8921065155748570230ull);
-    vlSelf->rv32i_m__DOT__ResultSrc = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 7716559815695853552ull);
-    vlSelf->rv32i_m__DOT__ALUSrcA = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 5228603661731304774ull);
-    vlSelf->rv32i_m__DOT__ALUSrcB = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 13301165780324570021ull);
-    vlSelf->rv32i_m__DOT__ImmSrc = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 5653746732157780739ull);
-    vlSelf->rv32i_m__DOT__ALUControl = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 5892709768120990068ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__clk = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 17189005088404194561ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__zero = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 4771206728156423910ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 11722353393537015054ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__PCwrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 764738913762064239ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__MemWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 2067282858777870940ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__IRwrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 1728140912793099749ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__RegWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 4434881194628469099ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__AdrSrc = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 295488622108122789ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__ResultSrc = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 5298955226899533636ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__ALUSrcA = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 13622811937830828977ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__ALUSrcB = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 8257481821809761066ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__ImmSrc = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 15799015841022183838ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__ALUControl = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 14387039045295181114ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__ALUop = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 17909890587058309550ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__branch = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 13313396094494675007ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__PCWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 14120963357157976437ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__MemWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 7118721827498529712ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__IRWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 18331877075594578744ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__RegWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 10944465174041324249ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__AdrSrc = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 8993996633372004039ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__ResultSrc = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 17034777083319011770ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__ALUSrcA = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 5483150629687680546ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__ALUSrcB = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 17803974204162194888ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__ALUCop = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 16465791456117962048ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__branch = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 8483332395433592001ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__clock = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 3906802761315112507ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__zero = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 9454955673314708791ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 4260736258263254812ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__op = VL_SCOPED_RAND_RESET_I(7, __VscopeHash, 4802544594932083666ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__state = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 8004027568704473184ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__fsm_inst__DOT__next_state = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 9584486832269211297ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__aluC_Generator__DOT__instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 10577822420774905371ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__aluC_Generator__DOT__ALUOp = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 1255699113874998556ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__aluC_Generator__DOT__ALUControl = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 15659658989133242110ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__decoder__DOT__instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 8752886152774725663ull);
-    vlSelf->rv32i_m__DOT__controller__DOT__decoder__DOT__ExtOp = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 12745268831689032366ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__clock = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 17640407837747276253ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__reset = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 13666740941395359131ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__PCWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 10733486665674192895ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__AdrSrc = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 14057655310341582064ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__MemWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 12718490136997973997ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__IRWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 14211169941135677723ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__RegWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 14368202739378705781ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__ResultSrc = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 8241932189318327482ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__ALUControl = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 11428755515271937110ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__SdataSrc = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 9236061296066625947ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__ImmSrc = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 4377722456085556914ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__Instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 8293834814238922744ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__Zero = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 12755015847174228026ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__MemAddr = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 18355233987191419777ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__MemWriteData = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16603650192435686199ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__MemReadData = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 659865525066185441ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__ALUResult = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 14262651711959065468ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__Result = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 932819499411758859ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__oldPC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 5367056554471325266ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__PC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 12924088223215936802ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__mdr_data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 5337922371074967277ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__rd1 = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 2993147067786096418ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__rd2 = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 3707483185626157358ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__imm = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 7200356786530021797ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__ALUSrcA = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 5360975002700050927ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__ALUSrcB = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 17352130785821407744ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__regFile__DOT__clock = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 12976694568494745744ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__regFile__DOT__rs1_addr = VL_SCOPED_RAND_RESET_I(5, __VscopeHash, 8890649809066043643ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__regFile__DOT__rs2_addr = VL_SCOPED_RAND_RESET_I(5, __VscopeHash, 9467273815464041986ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__regFile__DOT__rd_addr = VL_SCOPED_RAND_RESET_I(5, __VscopeHash, 8578856640612492583ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__regFile__DOT__writeData = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 15291426613078820961ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__regFile__DOT__RegWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 11076612913681486464ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__regFile__DOT__rs1_data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 9539592441910190778ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__regFile__DOT__rs2_data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 4230211334111235122ull);
+    vlSelf->Top__DOT__clk = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 15581438347449058537ull);
+    vlSelf->Top__DOT__reset = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 5576838674523384047ull);
+    vlSelf->Top__DOT__memWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 5729213696594658927ull);
+    vlSelf->Top__DOT__mem_addr = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 12423766748037753825ull);
+    vlSelf->Top__DOT__mem_wdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 11616067320644209941ull);
+    vlSelf->Top__DOT__mem_wmask = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 10921420263019649199ull);
+    vlSelf->Top__DOT__mem_rdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 3159181184631437810ull);
+    vlSelf->Top__DOT__cpu__DOT__clk = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 7574450455385687725ull);
+    vlSelf->Top__DOT__cpu__DOT__reset = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 5970887251590338191ull);
+    vlSelf->Top__DOT__cpu__DOT__memWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 4512872901142811656ull);
+    vlSelf->Top__DOT__cpu__DOT__mem_rdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 2037814357960884096ull);
+    vlSelf->Top__DOT__cpu__DOT__mem_addr = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 130112119837702784ull);
+    vlSelf->Top__DOT__cpu__DOT__mem_wdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 7845519334554174999ull);
+    vlSelf->Top__DOT__cpu__DOT__mem_wmask = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 12747878953746484427ull);
+    vlSelf->Top__DOT__cpu__DOT__zero = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 5008636240274322654ull);
+    vlSelf->Top__DOT__cpu__DOT__instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 17757476522881396545ull);
+    vlSelf->Top__DOT__cpu__DOT__PCwrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 15851199608657043777ull);
+    vlSelf->Top__DOT__cpu__DOT__IRwrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 1565794340503407986ull);
+    vlSelf->Top__DOT__cpu__DOT__RegWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 14182419463199950822ull);
+    vlSelf->Top__DOT__cpu__DOT__AdrSrc = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 14127625514155559175ull);
+    vlSelf->Top__DOT__cpu__DOT__ResultSrc = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 14418331671498030708ull);
+    vlSelf->Top__DOT__cpu__DOT__SALUsrcA = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 2081674371224445112ull);
+    vlSelf->Top__DOT__cpu__DOT__SALUsrcB = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 15448560270929754411ull);
+    vlSelf->Top__DOT__cpu__DOT__ImmSrc = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 463811607943449808ull);
+    vlSelf->Top__DOT__cpu__DOT__ALUControl = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 12979728923294305496ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__reset = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 2255149980104011214ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__clk = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 6880953692575933828ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__zero = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 6999070004612867198ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 6298709910604989279ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__PCwrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 2016691145712698278ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__MemWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 17668206172173814782ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__IRwrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 10305144209583725581ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__RegWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 15877613638556014976ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__AdrSrc = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 6805740812912452024ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__ResultSrc = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 14415890149804345767ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__SALUSrcA = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 1569345039339509522ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__SALUSrcB = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 8556313533766653509ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__ImmSrc = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 15154934250672655933ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__ALUControl = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 12569780886576385928ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__ALUop = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 1813185284604840135ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__branch = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 1442861864951227416ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__PCWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 11592283492625576991ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__MemWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 3470781846166571201ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__IRWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 11331754213001834944ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__RegWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 5022642892098368424ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__AdrSrc = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 1792172187052145546ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__ResultSrc = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 3701201954368986995ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__SALUSrcA = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 4889826332966548942ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__SALUSrcB = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 5041945714267041672ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__ALUCop = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 17322836437586090951ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__branch = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 1011186978275954844ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__clock = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 9421922414900167282ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__reset = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 1541271331777111104ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__zero = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 3005968403584809588ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 3377812141138342813ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__state = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 10499763959509906ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__next_state = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 11266824273815738182ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__aluC_Generator__DOT__instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 4953102202569121186ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__aluC_Generator__DOT__ALUOp = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 2053164130784128135ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__aluC_Generator__DOT__ALUControl = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 2787548911358632691ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__decoder__DOT__instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 14542722014224459199ull);
+    vlSelf->Top__DOT__cpu__DOT__controller__DOT__decoder__DOT__ExtOp = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 9652163295232031036ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__clock = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 10221466454325049740ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__reset = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 12731952107922917028ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__PCWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 9418436196286841390ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__AdrSrc = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 10692794192236668567ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__MemWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 1444592891599546845ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__IRWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 8679969329048297550ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__RegWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 12266665093043095092ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__ResultSrc = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 5603091561156167535ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__ALUControl = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 2096089284712023728ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__SALUsrcA = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 4918292781186863432ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__SALUsrcB = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 14511203639901550865ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__ImmSrc = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 9001791649388153021ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__Instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 10593436345754686450ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__Zero = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 1876608200534317798ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__MemAddr = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 1183491507735077267ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__MemWriteData = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 6502638393803081055ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__MemWriteMask = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 7113159052113009478ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__MemReadData = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 10972833060151286693ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__ALUResult = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16473336835859412471ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__Result_From_ResultSrc = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 11712881896344566399ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__oldPC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 7874811036769424916ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__PC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 10356137772939662619ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__mdr_data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 6251349277060759861ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__rd1 = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 15031087061297906619ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__rd2 = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 9674830997612492785ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__imm = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16012879374316520496ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__ALUSrcA = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 7038006900922278671ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__ALUSrcB = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 12474931123495147414ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__clock = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 17111198274473375836ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__reset = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 7455654590502699208ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__rs1_addr = VL_SCOPED_RAND_RESET_I(5, __VscopeHash, 7603583411815850474ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__rs2_addr = VL_SCOPED_RAND_RESET_I(5, __VscopeHash, 1985149922284837021ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__rd_addr = VL_SCOPED_RAND_RESET_I(5, __VscopeHash, 8066306284620157526ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__writeData = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 3773536750412382607ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__RegWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 14634156946824980101ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__rs1_data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 17379939444375482729ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__rs2_data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 876963560113755936ull);
     for (int __Vi0 = 0; __Vi0 < 32; ++__Vi0) {
-        vlSelf->rv32i_m__DOT__datapath__DOT__regFile__DOT__regFile[__Vi0] = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 311829499222499944ull);
+        vlSelf->Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__regFile[__Vi0] = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 8073254869090222233ull);
     }
-    vlSelf->rv32i_m__DOT__datapath__DOT__regFile__DOT__unnamedblk1__DOT__i = 0;
-    vlSelf->rv32i_m__DOT__datapath__DOT__extender__DOT__imm = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 2315977698067540215ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__extender__DOT__ExtOp = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 602614296376555625ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__extender__DOT__extImm = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16101694976391351126ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__ir_mdr__DOT__reset = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 8819093657125898179ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__ir_mdr__DOT__clock = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 14713191788545246746ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__ir_mdr__DOT__IRWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 4030956650834845273ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__ir_mdr__DOT__instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 13304700524764135753ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__ir_mdr__DOT__PC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 14282120827878355495ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__ir_mdr__DOT__oldPC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 5704514113929514085ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__ir_mdr__DOT__o_instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 1133089495921029674ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__ir_mdr__DOT__Data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 15987976868673621366ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__ir_mdr__DOT__o_Data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 9602206904443762793ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__spcSrc__DOT__clk = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 9438692200718257455ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__spcSrc__DOT__PCWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 1727908036963361906ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__spcSrc__DOT__newPC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 2175579685293283306ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__spcSrc__DOT__Result = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 6296675531671031103ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__spcSrc__DOT__Select = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 10119901581559703198ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__spcSrc__DOT__PC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 4501777516623730342ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__spcSrc__DOT__MemAddr = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 8882270385934756743ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sdataSrc__DOT__clock = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 15046429453782297513ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sdataSrc__DOT__newPC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 649667963872760280ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sdataSrc__DOT__oldPC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 14606250084942971102ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sdataSrc__DOT__rs1 = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 2850869764265791348ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sdataSrc__DOT__rs2 = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 17567140093241234782ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sdataSrc__DOT__imm = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 6814064370988905788ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sdataSrc__DOT__SdataSrcA = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 822836472353924560ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sdataSrc__DOT__SdataSrcB = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 9894708245643438888ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sdataSrc__DOT__writeData = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 8930468837564719698ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sdataSrc__DOT__ALUsrcA = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 4782693749228494158ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sdataSrc__DOT__ALUsrcB = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 14501987886140407714ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sdataSrc__DOT__Data1 = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 9419051332104545833ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__alu__DOT__ALUControl = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 9299913094794451822ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__alu__DOT__A = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 8056233215225380033ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__alu__DOT__B = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 3160914743661062437ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__alu__DOT__ALUResult = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 3318279854549309827ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__alu__DOT__Zero = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 5201239257080988196ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sResultSrc__DOT__clock = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 8949244609666134023ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sResultSrc__DOT__resultSrc = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 3210417732898796103ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sResultSrc__DOT__ALUresult = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 13366792197786701483ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sResultSrc__DOT__MemData = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 11478991756927567569ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sResultSrc__DOT__Result = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 14721792144716599315ull);
-    vlSelf->rv32i_m__DOT__datapath__DOT__sResultSrc__DOT__ALUout = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 7655905930855030402ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__unnamedblk1__DOT__i = 0;
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__unnamedblk2__DOT__i = 0;
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__extender__DOT__imm = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 14526722812213178889ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__extender__DOT__ExtOp = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 11110600866073098664ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__extender__DOT__extImm = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 15575279971224053223ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__ir__DOT__reset = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 14264956162913028552ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__ir__DOT__clock = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 16787905718687070203ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__ir__DOT__IRWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 4505863946782835148ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__ir__DOT__instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 9998755520838008473ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__ir__DOT__PC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 5391373032132884649ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__ir__DOT__oldPC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 5068134827422047839ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__ir__DOT__o_instruction = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16550635052728542591ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__mdr__DOT__reset = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 9771663531974055374ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__mdr__DOT__clock = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 5375686332363319730ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__mdr__DOT__Which_load_comment = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 12232173827748825238ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__mdr__DOT__What_HW_or_B = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 4911596139250628324ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__mdr__DOT__Data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 13212159277596323511ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__mdr__DOT__o_Data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 2659860245247079595ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__mdr__DOT__i_Data = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 3021145908495799226ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__store__DOT__writeData = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 15041029666446139797ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__store__DOT__WhichStore = VL_SCOPED_RAND_RESET_I(3, __VscopeHash, 9453097116674219234ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__store__DOT__which_half_or_byte = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 10940181627771653963ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__store__DOT__storeData = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 7425134811701026507ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__store__DOT__storeMask = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 4828054652714972180ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__spcSrc__DOT__clk = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 3954087967753708429ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__spcSrc__DOT__reset = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 13000147428757699204ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__spcSrc__DOT__PCWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 12153347839284042781ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__spcSrc__DOT__newPC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 8093116646288581139ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__spcSrc__DOT__Result_From_ResultSrc = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16222982646266546051ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__spcSrc__DOT__Select = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 9588051972559739257ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__spcSrc__DOT__PC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 7899641850950594909ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__spcSrc__DOT__MemAddr = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 15856031458558694210ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__clock = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 4916845992555899470ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__reset = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 6558037091337477138ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__newPC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16932639272350876910ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__oldPC = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 2763022092636242534ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__rs1 = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 6521523393377298743ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__rs2 = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 17589079483984231139ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__imm = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 4661412689765985012ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__SdataSrcA = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 3536645630454863507ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__SdataSrcB = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 6603093036630343230ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__ALUsrcA = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 10128974276919322194ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__ALUsrcB = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 18052529581866818689ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__Data1 = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 9365388816201829750ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__writeData = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 4571417777226476405ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__alu__DOT__ALUControl = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 12674370260656741210ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__alu__DOT__A = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 10437307751966131330ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__alu__DOT__B = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 12281767544265617849ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__alu__DOT__ALUResult = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 5863831996127627116ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__alu__DOT__Zero = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 12602971815863585617ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sResultSrc__DOT__clock = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 7514545298557542335ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sResultSrc__DOT__reset = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 2250738408119164923ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sResultSrc__DOT__resultSrc = VL_SCOPED_RAND_RESET_I(2, __VscopeHash, 11733450653216520323ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sResultSrc__DOT__ALUresult = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 1830977057930677705ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sResultSrc__DOT__MemData = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 13955311665525738509ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sResultSrc__DOT__Result = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16072165574934988383ull);
+    vlSelf->Top__DOT__cpu__DOT__datapath__DOT__sResultSrc__DOT__ALUout = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 3683844073642340800ull);
+    vlSelf->Top__DOT__memory__DOT__clk = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 17407180523109021890ull);
+    vlSelf->Top__DOT__memory__DOT__memWrite = VL_SCOPED_RAND_RESET_I(1, __VscopeHash, 8460947799145111817ull);
+    vlSelf->Top__DOT__memory__DOT__mem_addr = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 2365509651396763915ull);
+    vlSelf->Top__DOT__memory__DOT__mem_wdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 112579349787872790ull);
+    vlSelf->Top__DOT__memory__DOT__mem_wmask = VL_SCOPED_RAND_RESET_I(4, __VscopeHash, 3794192217261688223ull);
+    vlSelf->Top__DOT__memory__DOT__mem_rdata = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 16259073242189221599ull);
+    for (int __Vi0 = 0; __Vi0 < 1024; ++__Vi0) {
+        vlSelf->Top__DOT__memory__DOT__ram[__Vi0] = VL_SCOPED_RAND_RESET_I(32, __VscopeHash, 18226569174190927246ull);
+    }
     vlSelf->__VdfgRegularize_h6e95ff9d_0_4 = 0;
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VstlTriggered[__Vi0] = 0;
@@ -364,12 +395,14 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VactTriggered[__Vi0] = 0;
     }
-    vlSelf->__Vtrigprevexpr___TOP__rv32i_m__DOT__controller__DOT__fsm_inst__DOT__clock__0 = 0;
-    vlSelf->__Vtrigprevexpr___TOP__rv32i_m__DOT__datapath__DOT__regFile__DOT__clock__0 = 0;
-    vlSelf->__Vtrigprevexpr___TOP__rv32i_m__DOT__datapath__DOT__ir_mdr__DOT__clock__0 = 0;
-    vlSelf->__Vtrigprevexpr___TOP__rv32i_m__DOT__datapath__DOT__spcSrc__DOT__clk__0 = 0;
-    vlSelf->__Vtrigprevexpr___TOP__rv32i_m__DOT__datapath__DOT__sdataSrc__DOT__clock__0 = 0;
-    vlSelf->__Vtrigprevexpr___TOP__rv32i_m__DOT__datapath__DOT__sResultSrc__DOT__clock__0 = 0;
+    vlSelf->__Vtrigprevexpr___TOP__Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__clock__0 = 0;
+    vlSelf->__Vtrigprevexpr___TOP__Top__DOT__cpu__DOT__datapath__DOT__regFile__DOT__clock__0 = 0;
+    vlSelf->__Vtrigprevexpr___TOP__Top__DOT__cpu__DOT__datapath__DOT__ir__DOT__clock__0 = 0;
+    vlSelf->__Vtrigprevexpr___TOP__Top__DOT__cpu__DOT__datapath__DOT__mdr__DOT__clock__0 = 0;
+    vlSelf->__Vtrigprevexpr___TOP__Top__DOT__cpu__DOT__datapath__DOT__spcSrc__DOT__clk__0 = 0;
+    vlSelf->__Vtrigprevexpr___TOP__Top__DOT__cpu__DOT__datapath__DOT__sdataSrc__DOT__clock__0 = 0;
+    vlSelf->__Vtrigprevexpr___TOP__Top__DOT__cpu__DOT__datapath__DOT__sResultSrc__DOT__clock__0 = 0;
+    vlSelf->__Vtrigprevexpr___TOP__Top__DOT__memory__DOT__clk__0 = 0;
     for (int __Vi0 = 0; __Vi0 < 1; ++__Vi0) {
         vlSelf->__VnbaTriggered[__Vi0] = 0;
     }

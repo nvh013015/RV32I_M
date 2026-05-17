@@ -1,6 +1,7 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1778518616" />
-    <testcase name="alu_combo_test" classname="DBb_testbench" file="/home/nvh-0502/Documents/Git/RV32I_M/Testbench/DBb_test/DBb_testbench.py" lineno="5" time="0.0007727146148681641" sim_time_ns="12.0" ratio_time="15529.666152422093" />
+    <property name="random_seed" value="1778811113" />
+    <testcase name="alu_combo_test" classname="DBb_testbench" file="/home/nvh-0502/Documents/Git/RV32I_M/Testbench/DBb_test/DBb_testbench.py" lineno="6" time="0.0017352104187011719" sim_time_ns="12.0" ratio_time="6915.587798845837" />
+    <testcase name="Extender_test" classname="DBb_testbench" file="/home/nvh-0502/Documents/Git/RV32I_M/Testbench/DBb_test/DBb_testbench.py" lineno="60" time="0.0014755725860595703" sim_time_ns="16.0" ratio_time="10843.248343835838" />
   </testsuite>
 </testsuites>

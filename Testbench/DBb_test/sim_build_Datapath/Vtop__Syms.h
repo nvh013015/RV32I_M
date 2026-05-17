@@ -32,7 +32,18 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop__Syms final : public VerilatedSyms {
     Vtop___024root                 TOP;
 
     // SCOPE NAMES
-    VerilatedScope* __Vscopep_ALU;
+    VerilatedScope* __Vscopep_Datapath;
+    VerilatedScope* __Vscopep_Datapath__alu;
+    VerilatedScope* __Vscopep_Datapath__extender;
+    VerilatedScope* __Vscopep_Datapath__ir;
+    VerilatedScope* __Vscopep_Datapath__mdr;
+    VerilatedScope* __Vscopep_Datapath__regFile;
+    VerilatedScope* __Vscopep_Datapath__regFile__unnamedblk1;
+    VerilatedScope* __Vscopep_Datapath__regFile__unnamedblk2;
+    VerilatedScope* __Vscopep_Datapath__sResultSrc;
+    VerilatedScope* __Vscopep_Datapath__sdataSrc;
+    VerilatedScope* __Vscopep_Datapath__spcSrc;
+    VerilatedScope* __Vscopep_Datapath__store;
     VerilatedScope* __Vscopep_TOP;
 
     // SCOPE HIERARCHY

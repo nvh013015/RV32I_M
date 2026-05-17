@@ -1,6 +1,7 @@
 import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge, Timer
+from cocotb.handle import Force, Release
 
 @cocotb.test()
 async def alu_combo_test(dut):
@@ -36,15 +37,15 @@ async def alu_combo_test(dut):
     
     for a, b, ctrl, exp, name in test_vectors:
         # Ép tín hiệu
-        dut.A.value = a
-        dut.B.value = b
-        dut.ALUControl.value = ctrl
-        
+        dut.alu.A.value = Force(a)
+        dut.alu.B.value = Force(b)
+        dut.alu.ALUControl.value = Force(ctrl)
+
         # Đợi logic tổ hợp ổn định
         await Timer(1, units="ns")
         
         # Lấy giá trị thực tế (Lưu ý: dùng .value.integer để so sánh hex/dec dễ dàng)
-        actual = dut.ALUResult.value.integer
+        actual = dut.alu.ALUResult.value.integer
         
         # Kiểm tra
         if actual == exp:
@@ -60,28 +61,58 @@ async def alu_combo_test(dut):
 async def Extender_test(dut):
     """Kiểm tra Extender với các giá trị biên của immediate"""
     
-    # Combo test: (Immediate, Expected, Name)
+    # Combo test: (Immediate, ExtOp, Expected, Name)
     test_vectors = [
-        (0x00000, 0x00000000, "Immediate_0"),          # 0
-        (0x7FFFF, 0x0007FFFF, "Immediate_Positive"),   # Max positive 19-bit
-        (0x80000, 0xFFF80000, "Immediate_Negative"),   # Min negative 19-bit (sign-extended)
-        (0xFFFFF, 0xFFFFFFFF, "Immediate_AllOnes")     # -1 in 19-bit (sign-extended)
+        # I-type (ExtOp=0)
+        (0x00000000, 0, 0x00000000, "I_ZERO"),
+        (0x000000FF, 0, 0x000000FF, "I_POS"),
+        (0x80000000, 0, 0xFFFFF800, "I_NEG"),
+        
+        # S-type (ExtOp=1)
+        (0x00000000, 1, 0x00000000, "S_ZERO"),
+        (0x00000F80, 1, 0x0000001F, "S_POS"),
+        (0x88000000, 1, 0xFFFFFC00, "S_NEG"),
+        
+        # B-type (ExtOp=2)
+        (0x00000000, 2, 0x00000000, "B_ZERO"),
+        (0x7E00F80, 2, 0x000001FE, "B_POS"),
+        (0x80000000, 2, 0xFFF00000, "B_NEG"),
+        
+        # U-type (ExtOp=3)
+        (0x00000000, 3, 0x00000000, "U_ZERO"),
+        (0x12345678, 3, 0x12345000, "U_POS"),
+        (0x87654321, 3, 0x87654000, "U_NEG"),
+        
+        # J-type (ExtOp=4)
+        (0x00000000, 4, 0x00000000, "J_ZERO"),
+        (0x7FFFF000, 4, 0x0FFFFFE, "J_POS"),
+        (0x80000000, 4, 0xFFF00000, "J_NEG"),
+        
+        # Default
+        (0xFFFFFFFF, 5, 0x00000000, "DEFAULT")
     ]
 
     dut._log.info("--- BẮT ĐẦU KIỂM TRA EXTENDER ---")
     
-    for imm, exp, name in test_vectors:
-        dut.Immediate.value = imm
-        
+    for imm, extop, exp, name in test_vectors:
+        # Ép tín hiệu
+        dut.extender.imm.value = Force(imm)
+        dut.extender.ExtOp.value = Force(extop)
+
+        # Đợi logic tổ hợp ổn định
         await Timer(1, units="ns")
         
-        actual = dut.ExtendedImmediate.value.integer
+        # Lấy giá trị thực tế
+        actual = dut.extender.extImm.value.integer
         
+        # Kiểm tra
         if actual == exp:
-            dut._log.info(f"[PASS] {name:20} | Extended: {hex(actual)}")
+            dut._log.info(f"[PASS] {name:10} | Result: {hex(actual)}")
         else:
-            dut._log.error(f"[FAIL] {name:20} | Immediate: {hex(imm)}")
+            dut._log.error(f"[FAIL] {name:10} | Imm:{hex(imm)} ExtOp:{extop}")
             dut._log.error(f"       Got: {hex(actual)}, Expected: {hex(exp)}")
             # raise AssertionError(f"Test {name} failed!")
 
-    dut._log.info("--- HOÀN THÀNH KIỂM TRA EXTENDER ---")
+    dut._log.info("--- HOÀN THÀNH KIỂM TRA EXTENDER ---")  
+
+    

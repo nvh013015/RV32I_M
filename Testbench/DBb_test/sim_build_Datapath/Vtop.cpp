@@ -10,11 +10,23 @@
 Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
     : VerilatedModel{*_vcontextp__}
     , vlSymsp{new Vtop__Syms(contextp(), _vcname__, this)}
+    , clock{vlSymsp->TOP.clock}
+    , reset{vlSymsp->TOP.reset}
+    , PCWrite{vlSymsp->TOP.PCWrite}
+    , AdrSrc{vlSymsp->TOP.AdrSrc}
+    , MemWrite{vlSymsp->TOP.MemWrite}
+    , IRWrite{vlSymsp->TOP.IRWrite}
+    , RegWrite{vlSymsp->TOP.RegWrite}
+    , ResultSrc{vlSymsp->TOP.ResultSrc}
     , ALUControl{vlSymsp->TOP.ALUControl}
+    , SdataSrc{vlSymsp->TOP.SdataSrc}
+    , ImmSrc{vlSymsp->TOP.ImmSrc}
     , Zero{vlSymsp->TOP.Zero}
-    , A{vlSymsp->TOP.A}
-    , B{vlSymsp->TOP.B}
-    , ALUResult{vlSymsp->TOP.ALUResult}
+    , MemWriteMask{vlSymsp->TOP.MemWriteMask}
+    , Instruction{vlSymsp->TOP.Instruction}
+    , MemAddr{vlSymsp->TOP.MemAddr}
+    , MemWriteData{vlSymsp->TOP.MemWriteData}
+    , MemReadData{vlSymsp->TOP.MemReadData}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context
@@ -140,6 +152,6 @@ VL_ATTR_COLD void Vtop::traceBaseModel(VerilatedTraceBaseC* tfp, int levels, int
             " use --trace-fst with VerilatedFst object, and --trace-vcd with VerilatedVcd object");
     }
     stfp->spTrace()->addModel(this);
-    stfp->spTrace()->addInitCb(&trace_init, &(vlSymsp->TOP), name(), false, 10);
+    stfp->spTrace()->addInitCb(&trace_init, &(vlSymsp->TOP), name(), false, 140);
     Vtop___024root__trace_register(&(vlSymsp->TOP), stfp->spTrace());
 }

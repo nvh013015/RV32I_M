@@ -1,31 +1,31 @@
-# --- ĐƯỜNG DẪN DỰA TRÊN CẤY THƯ MỤC CỦA BẠN ---
-# Lùi 2 cấp từ DBb_test để ra thư mục gốc, rồi vào RV32I_V0
-RELATIVE_V_DIR = ../../RV32I_V0/D_Building_block
-
-# Chuyển thành đường dẫn tuyệt đối để tránh lỗi Verilator
+# --- ĐƯỜNG DẪN ---
+# V_DIR hiện tại là đường dẫn tuyệt đối đến thư mục RV32I_V0
+RELATIVE_V_DIR = ../../RV32I_V0
 V_DIR = $(abspath $(PWD)/$(RELATIVE_V_DIR))
 
-# Thiết lập Target (Mặc định là ALU)
-target ?= ALU
-
 # --- COCOTB CONFIG ---
+target ?= Datapath
 SIM ?= verilator
 TOPLEVEL_LANG ?= verilog
 
-# QUAN TRỌNG: Chỉ định file nguồn
+# File nguồn chính nằm ngay trong RV32I_V0
 VERILOG_SOURCES = $(V_DIR)/$(target).sv
 TOPLEVEL = $(target)
-
-# Chỉnh lại tên file python cho đúng với ảnh của bạn
 MODULE = DBb_testbench
 
-# --- VERILATOR ARGS ---
-COMPILE_ARGS += --public-flat-rw --trace --trace-structs --timescale 1ns/1ps
+# --- THÊM ĐƯỜNG DẪN THƯ MỤC CON ---
+# Thêm -I kèm đường dẫn đến D_Building_block để Verilator tự tìm module con
+COMPILE_ARGS += -I$(V_DIR)/D_Building_block
 
-# --- DÒNG DEBUG (Kiểm tra xem file có tồn tại không) ---
+# Các tham số bổ trợ
+COMPILE_ARGS += --public-flat-rw --trace --trace-structs --timescale 1ns/1ps
+SIM_BUILD = sim_build_$(target)
+
+# --- DEBUG ---
 $(info ---------------------------------------------------)
-$(info Đang tìm file: $(VERILOG_SOURCES))
-$(if $(wildcard $(VERILOG_SOURCES)),$(info => STATUS: THẤY FILE),$(error => STATUS: KHÔNG THẤY FILE. Kiểm tra lại đường dẫn!))
+$(info [DEBUG] File Top: $(VERILOG_SOURCES))
+$(info [DEBUG] Thư mục linh kiện con: $(V_DIR)/D_Building_block)
+$(if $(wildcard $(VERILOG_SOURCES)),$(info [STATUS] => THẤY FILE TOP),$(error [ERROR] => KHÔNG THẤY FILE TOP!))
 $(info ---------------------------------------------------)
 
 include $(shell cocotb-config --makefiles)/Makefile.sim

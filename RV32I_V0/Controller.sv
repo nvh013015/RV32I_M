@@ -9,8 +9,8 @@ module Controller (
     output logic RegWrite,
     output logic AdrSrc,
     output logic [1:0] ResultSrc,
-    output logic [1:0] ALUSrcA,
-    output logic [1:0] ALUSrcB,
+    output logic [1:0] SALUSrcA,
+    output logic [1:0] SALUSrcB,
     output logic [2:0] ImmSrc,
     output logic [3:0] ALUControl
 );
@@ -25,8 +25,8 @@ module Controller (
         .RegWrite(RegWrite),
         .AdrSrc(AdrSrc),
         .ResultSrc(ResultSrc),
-        .ALUSrcA(ALUSrcA),
-        .ALUSrcB(ALUSrcB),
+        .SALUSrcA(SALUSrcA),
+        .SALUSrcB(SALUSrcB),
         .ALUCop(ALUop),
         .branch(branch),
         .clock(clk),

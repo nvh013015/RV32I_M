@@ -1,6 +1,8 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1778516176" />
-    <testcase name="rv32i_basic_test" classname="maintest" file="/home/nvh-0502/Documents/Git/RV32I_M/Testbench/maintest.py" lineno="33" time="0.010499954223632812" sim_time_ns="2021.0" ratio_time="192477.02960944595" />
+    <property name="random_seed" value="1779036459" />
+    <testcase name="rv32i_top_test" classname="maintest" file="/home/nvh-0502/Documents/Git/RV32I_M/Testbench/Maintest/maintest.py" lineno="6" time="0.006101131439208984" sim_time_ns="1481.0" ratio_time="242741.86103946855">
+      <failure error_type="AssertionError" error_msg="Thất bại: CPU chưa bao giờ ghi đúng giá trị 7 vào địa chỉ 96 (lệnh sw x7)!" />
+    </testcase>
   </testsuite>
 </testsuites>

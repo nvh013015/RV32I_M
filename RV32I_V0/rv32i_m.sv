@@ -15,8 +15,8 @@ module rv32i_m (
     logic RegWrite;
     logic AdrSrc;
     logic [1:0] ResultSrc;
-    logic [1:0] ALUSrcA;
-    logic [1:0] ALUSrcB;
+    logic [1:0] SALUsrcA;
+    logic [1:0] SALUsrcB;
     logic [2:0] ImmSrc;
     logic [3:0] ALUControl;
 
@@ -32,13 +32,12 @@ Controller controller (
     .RegWrite(RegWrite),
     .AdrSrc(AdrSrc),
     .ResultSrc(ResultSrc),
-    .ALUSrcA(ALUSrcA),
-    .ALUSrcB(ALUSrcB),
+    .SALUSrcA(SALUsrcA),
+    .SALUSrcB(SALUsrcB),
     .ImmSrc(ImmSrc),
     .ALUControl(ALUControl)
 );
 
-    logic [3:0] SdataSrc = {ALUSrcA, ALUSrcB};
 Datapath datapath (
     .clock(clk),
     .reset(reset),
@@ -49,7 +48,8 @@ Datapath datapath (
     .RegWrite(RegWrite),
     .ResultSrc(ResultSrc),
     .ALUControl(ALUControl),
-    .SdataSrc(SdataSrc),
+    .SALUsrcA(SALUsrcA),
+    .SALUsrcB(SALUsrcB),
     .ImmSrc(ImmSrc),
     .Instruction(instruction),
     .Zero(zero),

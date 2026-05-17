@@ -5,18 +5,19 @@
 #include "Vtop__pch.h"
 
 // Parameter definitions for Vtop___024root
-constexpr CData/*3:0*/ Vtop___024root::rv32i_m__DOT__controller__DOT__fsm_inst__DOT__FETCH;
-constexpr CData/*3:0*/ Vtop___024root::rv32i_m__DOT__controller__DOT__fsm_inst__DOT__DECODE;
-constexpr CData/*3:0*/ Vtop___024root::rv32i_m__DOT__controller__DOT__fsm_inst__DOT__MEM_ADR;
-constexpr CData/*3:0*/ Vtop___024root::rv32i_m__DOT__controller__DOT__fsm_inst__DOT__MEM_READ;
-constexpr CData/*3:0*/ Vtop___024root::rv32i_m__DOT__controller__DOT__fsm_inst__DOT__MEM_WRITEBACK;
-constexpr CData/*3:0*/ Vtop___024root::rv32i_m__DOT__controller__DOT__fsm_inst__DOT__MEM_WRITE;
-constexpr CData/*3:0*/ Vtop___024root::rv32i_m__DOT__controller__DOT__fsm_inst__DOT__EXECUTE_R;
-constexpr CData/*3:0*/ Vtop___024root::rv32i_m__DOT__controller__DOT__fsm_inst__DOT__ALU_WRITEBACK;
-constexpr CData/*3:0*/ Vtop___024root::rv32i_m__DOT__controller__DOT__fsm_inst__DOT__EXECUTE_I;
-constexpr CData/*3:0*/ Vtop___024root::rv32i_m__DOT__controller__DOT__fsm_inst__DOT__JAL;
-constexpr CData/*3:0*/ Vtop___024root::rv32i_m__DOT__controller__DOT__fsm_inst__DOT__BEQ;
-constexpr CData/*3:0*/ Vtop___024root::rv32i_m__DOT__controller__DOT__fsm_inst__DOT__IDLE;
+constexpr CData/*3:0*/ Vtop___024root::Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__FETCH;
+constexpr CData/*3:0*/ Vtop___024root::Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__DECODE;
+constexpr CData/*3:0*/ Vtop___024root::Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__MEM_ADR;
+constexpr CData/*3:0*/ Vtop___024root::Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__MEM_READ;
+constexpr CData/*3:0*/ Vtop___024root::Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__MEM_WRITEBACK;
+constexpr CData/*3:0*/ Vtop___024root::Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__MEM_WRITE;
+constexpr CData/*3:0*/ Vtop___024root::Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__EXECUTE_R;
+constexpr CData/*3:0*/ Vtop___024root::Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__ALU_WRITEBACK;
+constexpr CData/*3:0*/ Vtop___024root::Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__EXECUTE_I;
+constexpr CData/*3:0*/ Vtop___024root::Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__JAL;
+constexpr CData/*3:0*/ Vtop___024root::Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__BEQ;
+constexpr CData/*3:0*/ Vtop___024root::Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__INIT;
+constexpr CData/*3:0*/ Vtop___024root::Top__DOT__cpu__DOT__controller__DOT__fsm_inst__DOT__IDLE;
 
 
 void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf);

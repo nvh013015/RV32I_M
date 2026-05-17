@@ -10,7 +10,8 @@ module Datapath (
     input logic RegWrite,
     input logic [1:0] ResultSrc,
     input logic [3:0] ALUControl,
-    input logic [3:0] SdataSrc,
+    input logic [1:0] SALUsrcA,
+    input logic [1:0] SALUsrcB,
     input logic [2:0] ImmSrc,
     output logic [31:0] Instruction,
     
@@ -24,7 +25,7 @@ module Datapath (
 );
 
     logic [31:0] ALUResult;
-    logic [31:0] Result;
+    logic [31:0] Result_From_ResultSrc;
     logic [31:0] oldPC;
     logic [31:0] PC;
     logic [31:0] mdr_data;
@@ -38,7 +39,7 @@ module Datapath (
         .rs1_addr(Instruction[19:15]), // Assuming rs1 is in bits [19:15]
         .rs2_addr(Instruction[24:20]), // Assuming rs2 is in bits [24:20]
         .rd_addr(Instruction[11:7]),   // Assuming rd is in bits [11:7]
-        .writeData(Result),       // Connect to Result for writing back
+        .writeData(Result_From_ResultSrc),       // Connect to Result for writing back
         .rs1_data(rd1),     // Connect to ALU source A
         .rs2_data(rd2)      // Connect to ALU source B
     );
@@ -81,9 +82,9 @@ module Datapath (
         .reset(reset),
         .clk(clock),
         .PCWrite(PCWrite),
-        .newPC(Result), // Assuming newPC is the ALU result for simplicity
+        .newPC(Result_From_ResultSrc), // Assuming newPC is the ALU result for simplicity
         .PC(PC),
-        .Result(Result),
+        .Result_From_ResultSrc(Result_From_ResultSrc),
         .Select(AdrSrc),
         .MemAddr(MemAddr)
     );
@@ -96,8 +97,8 @@ module Datapath (
         .rs1(rd1), // Assuming rs1 is in bits [19:15]
         .rs2(rd2), // Assuming rs2 is in bits [24:20]
         .imm(imm), // Assuming imm is the extended immediate value
-        .SdataSrcA(SdataSrc[3:2]),
-        .SdataSrcB(SdataSrc[1:0]),
+        .SdataSrcA(SALUsrcA),
+        .SdataSrcB(SALUsrcB),
         .ALUsrcA(ALUSrcA), // Connect to ALU source A
         .ALUsrcB(ALUSrcB)  // Connect to ALU source B
 
@@ -120,7 +121,7 @@ module Datapath (
         .resultSrc(ResultSrc),
         .ALUresult(ALUResult),
         .MemData(mdr_data), // Assuming memory data is available
-        .Result(Result) // Connect to register file write data
+        .Result(Result_From_ResultSrc) // Connect to register file write data
     );
 
 

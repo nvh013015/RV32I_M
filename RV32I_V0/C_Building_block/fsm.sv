@@ -5,8 +5,8 @@ module fsm(
     output logic RegWrite,
     output logic AdrSrc,
     output logic [1:0] ResultSrc,
-    output logic [1:0] ALUSrcA,
-    output logic [1:0] ALUSrcB,
+    output logic [1:0] SALUSrcA,
+    output logic [1:0] SALUSrcB,
     output logic [1:0] ALUCop,
     output logic branch,
     input logic clock,
@@ -27,13 +27,14 @@ module fsm(
            EXECUTE_I      = 4'h8,
            JAL            = 4'h9,
            BEQ            = 4'hA,
+            INIT           = 4'b1110, // Initialization state
             IDLE = 4'b1111; 
     
     logic [3:0] state, next_state;
 
     always_ff @( posedge clock ) begin 
         if (reset) begin
-            state <= FETCH;
+            state <= INIT;
         end else begin
             state <= next_state;
         end
@@ -47,18 +48,23 @@ module fsm(
         RegWrite = 0;
         AdrSrc = 0;
         ResultSrc = 2'b00;
-        ALUSrcA = 2'b00;
-        ALUSrcB = 2'b00;
+        SALUSrcA = 2'b00;
+        SALUSrcB = 2'b00;
         ALUCop = 2'b00;
 
         case (state)
+
+            INIT: begin
+                // Set control signals for initialization (if needed)
+                next_state = FETCH; // Transition to FETCH state after initialization
+            end
 
             FETCH: begin
                 PCWrite = 1; // Enable PC update
                 IRWrite = 1; // Enable instruction register write
                 AdrSrc = 0; 
-                ALUSrcA = 2'b00; 
-                ALUSrcB = 2'b10; 
+                SALUSrcA = 2'b00; 
+                SALUSrcB = 2'b10; 
                 ALUCop = 2'b00; 
                 ResultSrc = 2'b10;
                 next_state = DECODE; 
@@ -67,8 +73,8 @@ module fsm(
             DECODE: begin
                 // Set control signals for decoding the instruction
                 // (e.g., read registers, prepare for execution)
-                ALUSrcA = 2'b01; // Use rs1 as ALU source A
-                ALUSrcB = 2'b01; // Use rs2 as ALU source
+                SALUSrcA = 2'b01; // Use rs1 as ALU source A
+                SALUSrcB = 2'b01; // Use rs2 as ALU source
                 ALUCop = 2'b00; // ALU performs addition (for address calculation)
                 case(instruction[6:0])
                     7'b0000011, 7'b0100011: next_state = MEM_ADR; // Load/Store instructions
@@ -82,8 +88,8 @@ module fsm(
 
             MEM_ADR: begin
                 // Set control signals for calculating memory address
-                ALUSrcA = 2'b10; // Use rs1 as ALU source A
-                ALUSrcB = 2'b01; // Use rs2 as ALU source
+                SALUSrcA = 2'b10; // Use rs1 as ALU source A
+                SALUSrcB = 2'b01; // Use rs2 as ALU source
                 ALUCop = 2'b00; // ALU performs addition (for address calculation
                 case(instruction[6:0])
                     7'b0000011: next_state = MEM_READ; // Load instruction
@@ -114,24 +120,24 @@ module fsm(
 
             EXECUTE_R: begin
                 // Set control signals for executing R-type instructions
-                ALUSrcA = 2'b10; // Use rs1 as ALU source A
-                ALUSrcB = 2'b00; // Use rs2 as ALU source
+                SALUSrcA = 2'b10; // Use rs1 as ALU source A
+                SALUSrcB = 2'b00; // Use rs2 as ALU source
                 ALUCop = 2'b10; // ALU performs operation based on funct3/funct7
                 next_state = ALU_WRITEBACK; // Transition to ALU_WRITEBACK state
             end
 
             EXECUTE_I: begin
                 // Set control signals for executing I-type instructions
-                ALUSrcA = 2'b10; // Use rs1 as ALU source A
-                ALUSrcB = 2'b01; // Use immediate as ALU source B
+                SALUSrcA = 2'b10; // Use rs1 as ALU source A
+                SALUSrcB = 2'b01; // Use immediate as ALU source B
                 ALUCop = 2'b10; // ALU performs operation based on funct3
                 next_state = ALU_WRITEBACK; // Transition to ALU_WRITEBACK state
             end
 
             JAL: begin
                 // Set control signals for executing JAL instruction
-                ALUSrcA = 2'b01; // Use PC as ALU source A
-                ALUSrcB = 2'b10; // Use immediate as ALU source B
+                SALUSrcA = 2'b01; // Use PC as ALU source A
+                SALUSrcB = 2'b10; // Use immediate as ALU source B
                 ALUCop = 2'b00; // ALU performs operation based on funct3
                 ResultSrc = 2'b00; // Select ALU result as result source
                 PCWrite = 1; // Enable PC update with ALU result
@@ -140,10 +146,11 @@ module fsm(
 
             BEQ: begin
                 // Set control signals for executing BEQ instruction
-                ALUSrcA = 2'b10; // Use rs1 as ALU source A
-                ALUSrcB = 2'b00; // Use rs2 as ALU source B
+                SALUSrcA = 2'b10; // Use rs1 as ALU source A
+                SALUSrcB = 2'b00; // Use rs2 as ALU source B
                 ALUCop = 2'b01; // ALU performs subtraction for comparison
                 branch = 1; // Enable branching
+                next_state = FETCH; // Transition back to FETCH state (branching logic handled in datapath)
             end
 
             ALU_WRITEBACK: begin

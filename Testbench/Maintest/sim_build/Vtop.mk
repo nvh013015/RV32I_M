@@ -49,7 +49,7 @@ VM_USER_CLASSES = \
 # User .cpp directories (from .cpp's on Verilator command line)
 VM_USER_DIR = \
   .. \
-  ../../venv/lib/python3.14/site-packages/cocotb/share/lib/verilator \
+  ../../../venv/lib/python3.14/site-packages/cocotb/share/lib/verilator \
 
 ### Default rules...
 # Include list of all generated classes

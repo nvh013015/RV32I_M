@@ -33,20 +33,25 @@ class alignas(VL_CACHE_LINE_BYTES) Vtop__Syms final : public VerilatedSyms {
 
     // SCOPE NAMES
     VerilatedScope* __Vscopep_TOP;
-    VerilatedScope* __Vscopep_rv32i_m;
-    VerilatedScope* __Vscopep_rv32i_m__controller;
-    VerilatedScope* __Vscopep_rv32i_m__controller__aluC_Generator;
-    VerilatedScope* __Vscopep_rv32i_m__controller__decoder;
-    VerilatedScope* __Vscopep_rv32i_m__controller__fsm_inst;
-    VerilatedScope* __Vscopep_rv32i_m__datapath;
-    VerilatedScope* __Vscopep_rv32i_m__datapath__alu;
-    VerilatedScope* __Vscopep_rv32i_m__datapath__extender;
-    VerilatedScope* __Vscopep_rv32i_m__datapath__ir_mdr;
-    VerilatedScope* __Vscopep_rv32i_m__datapath__regFile;
-    VerilatedScope* __Vscopep_rv32i_m__datapath__regFile__unnamedblk1;
-    VerilatedScope* __Vscopep_rv32i_m__datapath__sResultSrc;
-    VerilatedScope* __Vscopep_rv32i_m__datapath__sdataSrc;
-    VerilatedScope* __Vscopep_rv32i_m__datapath__spcSrc;
+    VerilatedScope* __Vscopep_Top;
+    VerilatedScope* __Vscopep_Top__cpu;
+    VerilatedScope* __Vscopep_Top__cpu__controller;
+    VerilatedScope* __Vscopep_Top__cpu__controller__aluC_Generator;
+    VerilatedScope* __Vscopep_Top__cpu__controller__decoder;
+    VerilatedScope* __Vscopep_Top__cpu__controller__fsm_inst;
+    VerilatedScope* __Vscopep_Top__cpu__datapath;
+    VerilatedScope* __Vscopep_Top__cpu__datapath__alu;
+    VerilatedScope* __Vscopep_Top__cpu__datapath__extender;
+    VerilatedScope* __Vscopep_Top__cpu__datapath__ir;
+    VerilatedScope* __Vscopep_Top__cpu__datapath__mdr;
+    VerilatedScope* __Vscopep_Top__cpu__datapath__regFile;
+    VerilatedScope* __Vscopep_Top__cpu__datapath__regFile__unnamedblk1;
+    VerilatedScope* __Vscopep_Top__cpu__datapath__regFile__unnamedblk2;
+    VerilatedScope* __Vscopep_Top__cpu__datapath__sResultSrc;
+    VerilatedScope* __Vscopep_Top__cpu__datapath__sdataSrc;
+    VerilatedScope* __Vscopep_Top__cpu__datapath__spcSrc;
+    VerilatedScope* __Vscopep_Top__cpu__datapath__store;
+    VerilatedScope* __Vscopep_Top__memory;
 
     // SCOPE HIERARCHY
     VerilatedHierarchy __Vhier;
